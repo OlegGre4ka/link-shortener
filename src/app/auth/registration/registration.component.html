@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <h1><span>Зарегистрируйтесь</span> и пользуйтесь сокращателем ссылок на полную!</h1>
+  <h4>...а также вы можете узнать как создавался этот проект и многое другое...</h4>
+
+  <form (ngSubmit)="submitRegistrForm()" [formGroup]="registrForm">
+    <!-- <div class="alert alert-{{message.type}}" *ngIf="message.text">{{message.text}}</div> -->
+    <div class="form-group email has-success" >
+
+      <label for="email"> Email: </label>
+      <input type="email" id="email" class="form-control underlined" formControlName="email" placeholder="Введите ваш емейл">
+      <span class="form-help-text text-danger" *ngIf="registrForm.get('email').invalid && registrForm.get('email').touched">
+        <span class="form-help-text text-danger" *ngIf="registrForm.get('email')['errors']['required']">Поле должно
+          быть
+          заполнено!
+        </span>
+        <span class="form-help-text text-danger" *ngIf="registrForm.get('email')['errors']['email']">Ведите коректный
+          емейл!
+        </span>
+        <span class="form-help-text text-danger" *ngIf="registrForm.get('email')['errors']['existEmail']">Такой емейл уже существует!
+        </span>
+      </span>
+    </div>
+
+    <div class="form-group pass has-success">
+      <label for="pass"> Password: </label>
+      <input type="text" id="pass" class="form-control underlined" formControlName="pass" placeholder="Пароль">
+      <span class="form-help-text text-danger" *ngIf="registrForm.get('pass').invalid && registrForm.get('pass').touched">
+        <span class="form-help-text text-danger" *ngIf="registrForm.get('pass')['errors']['required']">Поле должно быть
+          заполнено!
+        </span>
+        <span class="form-help-text text-danger" *ngIf="registrForm.get('pass')['errors']['minlength']">
+          Пароль должен быть не меньше {{registrForm.get('pass')['errors']['minlength']['requiredLength']}} символов.
+          Вы ввели - {{registrForm.get('pass')['errors']['minlength']['actualLength']}}!
+        </span>
+      </span>
+    </div>
+
+    <div class="form-group name has-success">
+      <label for="name"> Name: </label>
+      <input type="text" id="name" class="form-control" formControlName="name" placeholder="Введите ваше имя">
+      <!-- <span class="form-help-text text-danger" *ngIf="registrForm.get('email').invalid && registrForm.get('email').touched"> -->
+      <span class="form-help-text text-danger" *ngIf="registrForm.get('name').invalid && registrForm.get('name').touched">Поле
+        должно быть
+        заполнено!
+      </span>
+      <!-- <span class="form-help-text text-danger" *ngIf="registrForm.get('email')['errors']['email']">Ведите коректный
+            емейл!
+          </span>
+        </span> -->
+    </div>
+    <div class="form-group form-check div-checkbox">
+      <label for="agree" class="form-check-label">
+        <input type="checkbox" id="agree" class="form-check-input " formControlName="agree">
+        <p>Согласен с правилами</p>
+      </label>
+
+      <!-- <span class="form-help-text text-danger" *ngIf="registrForm.get('email').invalid && registrForm.get('email').touched">
+        <span class="form-help-text text-danger" *ngIf="registrForm.get('email')['errors']['required']">Поле должно быть
+          заполнено!
+        </span>
+        <span class="form-help-text text-danger" *ngIf="registrForm.get('email')['errors']['email']">Ведите коректный
+          емейл!
+        </span>
+      </span> -->
+    </div>
+    <button type="submit" class="btn btn-success"  [disabled]="registrForm.invalid">Войти</button>
+    <div class="form-group">
+      <p class="text-muted text-xl-center">Уже есть аккаунт? <a routerLink="/login">Войти!</a></p>
+    </div>
+  </form>
+</div>

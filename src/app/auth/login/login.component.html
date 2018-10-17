@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <h1><span>Login to account</span> </h1>
+  <h4>...Welcome to Shortener links!...</h4>
+
+  <form (ngSubmit)="submitLoginForm()" [formGroup]="loginForm">
+    <div class="alert alert-{{message.type}}" *ngIf="message.text">{{message.text}}</div>
+    <div class="form-group email has-success" [ngClass]="{'has-error':loginForm.get('email').invalid && loginForm.get('email').touched }">
+      <!-- [ngClass]-не работает, нужна другая валидация через BS4-->
+
+      <label for="email"> Email: </label>
+      <input type="email" id="email" class="form-control underlined" formControlName="email" placeholder="Введите ваш емейл">
+      <span class="form-help-text text-danger" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
+        <span class="form-help-text text-danger" *ngIf="loginForm.get('email')['errors']['required']">Поле должно быть
+          заполнено!
+        </span>
+        <span class="form-help-text text-danger" *ngIf="loginForm.get('email')['errors']['email']">Ведите коректный
+          емейл!
+        </span>
+      </span>
+    </div>
+
+    <div class="form-group pass has-success">
+      <label for="pass"> Password: </label>
+      <input type="text" id="pass" class="form-control underlined" formControlName="pass" placeholder="Пароль">
+      <span class="form-help-text text-danger" *ngIf="loginForm.get('pass').invalid && loginForm.get('pass').touched">
+        <span class="form-help-text text-danger" *ngIf="loginForm.get('pass')['errors']['required']">Поле должно быть
+          заполнено!
+        </span>
+        <span class="form-help-text text-danger" *ngIf="loginForm.get('pass')['errors']['minlength']">
+          Пароль должен быть не меньше {{loginForm.get('pass')['errors']['minlength']['requiredLength']}} символов.
+          Вы ввели - {{loginForm.get('pass')['errors']['minlength']['actualLength']}}!
+        </span>
+      </span>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid">Войти</button>
+    <div class="form-group">
+      <p class="text-muted text-xl-center">Нет аккаунта? <a routerLink="/registration">Зарегистрируйтесь!</a></p>
+    </div>
+  </form>
+</div>

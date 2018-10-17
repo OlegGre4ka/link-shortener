@@ -1,0 +1,49 @@
+.container-fluid{
+    margin-top:70px;
+             h3,h5, a, form{
+                          text-align:center;
+    
+                            }
+    form{
+            display:flex;
+            flex-direction: column;
+            margin:0 auto;
+            width:30%;
+            background-color: transparent;
+          
+            position: relative;
+            z-index: 1;
+            bottom: 350px;
+            margin-bottom: -350px;
+            .form-group{
+                 
+                input{
+                        margin:15px;
+        
+                     }
+                     p{
+                             color:red;
+                             width:200px;
+                             margin-left:auto;
+                             margin-right:auto;
+                             background-color: azure;
+                             border:1px solid red;
+                             border-radius: 3px;
+                     }
+            }
+    
+        textarea{
+                margin:15px;
+                height:100px;
+             }
+        button{
+                width:100px;
+                margin:15px 15px;
+                margin-left:auto;
+                margin-right:auto;
+             }
+         }
+ }
+ .border-error{
+        border: 1px solid red;
+}

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm bg-success fixed-top navbar-dark">
+    <div class="container">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Instinctools Test</a>
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item active" routerLinkActive='active'>
+                <a class="nav-link" routerLink="/linkshort">LinkShotener</a>
+            </li>
+            <li class="nav-item" routerLinkActive='active'>
+                <a class="nav-link" routerLink="/description">Description</a>
+            </li>
+            <li class="nav-item" routerLinkActive='active'>
+                <a class="nav-link" routerLink="/summury">Summury</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li> -->
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item" routerLinkActive='active'>
+                <a class="nav-link" routerLink="/registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li class="nav-item" routerLinkActive='active'>
+                <a class="nav-link" routerLink="/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+<div class="body-app">
+    <router-outlet></router-outlet>
+
+</div>
+
+<div class="footer">
+    <p>Footer</p>
+  </div>

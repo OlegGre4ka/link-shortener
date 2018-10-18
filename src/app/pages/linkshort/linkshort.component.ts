@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ImagesService } from 'src/app/shared/services/images.service';
 
 @Component({
     selector: 'inst-linkshort',
@@ -7,7 +8,7 @@ import { NgForm } from '@angular/forms';
     styleUrls: ['./linkshort.component.scss']
 })
 export class LinkshortComponent implements OnInit {
-
+    renderedSpinner = true;
     images: any;
 
     short_link;
@@ -20,22 +21,19 @@ export class LinkshortComponent implements OnInit {
 
     @ViewChild('form') form: NgForm;
     @ViewChild('shortUrl') shortUrl: ElementRef;
-    constructor() { }
+    constructor(private imagesService: ImagesService) { }
 
     ngOnInit() {
-        this.images = [1, 2, 3, 4, 5].map(() => `https://picsum.photos/1340/500?random&t=${Math.random()}`);
-    }
-
+ this.images = [1, 2, 3, 4, 5].map(() => `https://picsum.photos/1340/500?random&t=${Math.random()}`);
+ this.renderedSpinner = false;
+        }
 
     submitForm() {
         const https_www = 'https://www.';
         const https = 'https://';
 
         const cut_https_www = this.form.value.url.trim().substr(0, 12);
-        console.log(cut_https_www, 'result substr https://www.');
         const cut_https = this.form.value.url.trim().substr(0, 8);
-        console.log(cut_https, 'result substr https://');
-
 
         this.long_link = this.form.value.url;
 
@@ -47,7 +45,7 @@ export class LinkshortComponent implements OnInit {
             this.short_link = this.longLink + '/' + (`${(Math.random())}`).slice(2, 6);
         }
 
-              this.links = {
+        this.links = {
             longUrl: this.long_link,
             shortUrl: this.short_link,
             description: this.form.value.description,

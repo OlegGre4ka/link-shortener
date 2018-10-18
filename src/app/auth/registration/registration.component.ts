@@ -4,6 +4,7 @@ import { UsersService } from '../../shared/services/users.service';
 import { User } from '../../shared/models/user.model';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'inst-registration',
@@ -12,7 +13,10 @@ import { Observable } from 'rxjs';
 })
 export class RegistrationComponent implements OnInit {
   registrForm: FormGroup;
-  constructor(private userService: UsersService, private router: Router) { }
+  constructor(private userService: UsersService, private router: Router , private modalService: NgbModal) { }
+  openWindowCustomClass(modal) {
+    this.modalService.open(modal, { windowClass: 'dark-modal' });
+  }
 
   ngOnInit() {
     this.registrForm = new FormGroup({

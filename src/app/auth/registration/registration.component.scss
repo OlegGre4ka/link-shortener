@@ -26,7 +26,31 @@
                 .email, .pass,.name, .div-checkbox{
                                 text-align:left;
                                          }
+                                 .div-checkbox{
+                                             label{
+                                                 p{
+                                                    span{
+                                                        color:purple;
+                                                        &:hover{
+                                                               color:green;
+                                                               cursor: pointer;
+                                                                 }
+                                                         } 
+                                                    }
+                                                  }
+                                             
+                                                }
+       
                        
 
     }
+   
+}
+.mdl-header, .mdl-footer{
+    color:white;
+    background-color: green;
+}
+.mdl-body{
+    color:yellow;
+    background-color:rgb(24, 24, 43);
 }

@@ -1,9 +1,16 @@
 .container-fluid{
     margin-top:70px;
-             h3,h5, a, form{
-                          text-align:center;
-    
+        h3,h5, a, form{
+                 text-align:center;
                             }
+        .flex-spinner{
+                display: flex;
+                justify-content: center;
+                // background-color: rgb(255, 208, 0);
+                   i{
+                      color:rgb(77, 77, 156)
+                    }
+                }
     form{
             display:flex;
             flex-direction: column;

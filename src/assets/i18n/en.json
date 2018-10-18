@@ -1,0 +1,20 @@
+{
+    "nav": {
+        "linkShotener": "LinkShotener",
+        "description": "Description",
+        "summury": "Summury",
+        "signUp": "Sign Up",
+        "login": "Log in"
+    },
+    "linkshort": {
+        "title_h1": "Hello Guys!",
+        "text_h5": "Let's shorten your links)!",
+        "url": {
+            "placeholder": "Enter URL to shorten",
+            "tooltip": "Enter correct URL"
+        },
+        "textarea":"Link description",
+        "button":"Shorten!"
+
+    }
+}

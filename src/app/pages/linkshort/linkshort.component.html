@@ -1,36 +1,41 @@
 <div class="container-fluid">
-  <h3>Hello Guys!</h3>
-  <h5>Let's shorten your links)!</h5>
+  <h3>{{'linkshort.title_h1'| translate}}</h3>
+  <h5>{{'linkshort.text_h5'| translate}}</h5>
+  
+  <div class="flex-spinner" *ngIf="renderedSpinner">
+    <i class="fa fa-spinner fa-spin"></i>
+  </div>
+
   <ngb-carousel *ngIf="images">
 
     <ng-template ngbSlide *ngFor="let image of images">
       <img [src]="image" alt="Random slide">
-     
+
     </ng-template>
   </ngb-carousel>
-  <form (ngSubmit)="submitForm()"  #form="ngForm">
-      <div class="form-group">
-        <input type="url" class="form-control" name="url" pattern="(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?"
-          ngModel required #url="ngModel" [ngClass]="{'border-error': url.invalid && url.touched}" placeholder="Введите URL ссылку для сокращения">
-        <p *ngIf="url.invalid && url.touched">Введите коректный URL</p>
-               <!-- <p *ngIf="url.invalid && url.dirty">Поле должно быть заполнено!</p> -->
-  
-      </div>
-      <div class="form-group">
-        <textarea class="form-control" name="description" id="" cols="20" rows="5" ngModel required placeholder="Описание ссылки"></textarea>
-      </div>
-  
-      <button type="submit" class="btn btn-success" [disabled]="form.invalid">Shorten!</button>
-   
-    </form>
+  <form (ngSubmit)="submitForm()" #form="ngForm">
+    <div class="form-group">
+      <input type="url" class="form-control" name="url" pattern="(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?"
+        ngModel required #url="ngModel" placeholder="{{'linkshort.url.placeholder'| translate}}">
+      <p *ngIf="url.invalid && url.touched">{{'linkshort.url.tooltip'| translate}}</p>
+      <!-- <p *ngIf="url.invalid && url.dirty">Поле должно быть заполнено!</p> -->
+
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="description" id="" cols="20" rows="5" ngModel required placeholder="{{'linkshort.textarea'| translate}}"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="form.invalid">{{'linkshort.button'| translate}}</button>
+
+  </form>
 </div>
 
 <div class="container-fluid">
- 
+
   <div class="links" *ngFor="let link of formData">
 
-    <h5> <a href="{{link.longUrl}}" target="_blank"><span (click)="counterMath()"
-       #shortUrl>{{link.shortUrl}}</span> </a> - {{link.description}} - walked {{this.count}}times</h5>
+    <h5> <a href="{{link.longUrl}}" target="_blank"><span (click)="counterMath()" #shortUrl>{{link.shortUrl}}</span>
+      </a> - {{link.description}} - walked {{this.count}}times</h5>
 
   </div>
 </div>

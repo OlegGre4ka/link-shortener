@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       (params: Params) => {
         if (params['nowCanLoggin']) {
           this.showMessage({ text: 'Hello! Теперь вы можете войти в систему!', type: 'success' });
-        } else if (params['accessDanied']) {
+        } else if (params['accessForAdmin']) {
           this.showMessage({ text: 'Эта страница доступна только администраторам!Введите пароль администротора!', type: 'warning' });
         }
       }

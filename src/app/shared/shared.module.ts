@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { UsersService } from './services/users.service';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   imports: [
@@ -15,14 +21,23 @@ import { UsersService } from './services/users.service';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    TranslateModule.forChild({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ],
-  declarations: [],
+  declarations: [NotFoundComponent],
 
   exports: [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    TranslateModule,
+    NotFoundComponent
   ]
 })
 export class SharedModule { }

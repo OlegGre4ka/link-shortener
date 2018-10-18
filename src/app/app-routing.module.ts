@@ -7,16 +7,20 @@ import { DescriptionComponent } from './pages/description/description.component'
 import { SummuryComponent } from './pages/summury/summury.component';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { AuthComponent } from './auth/auth.component';
-import { AuthGuard } from './shared/guards/auth.guard';
+
+import { DescriptionGuard } from './shared/guards/description.guard';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'linkshort', component: LinkshortComponent },
-  { path: 'description', canActivate: [AuthGuard], component: DescriptionComponent},
+  { path: 'description', canActivate: [DescriptionGuard], component: DescriptionComponent},
   { path: 'summury', component: SummuryComponent},
 
-  { path: 'auth', component: AuthComponent}
+  { path: 'auth', component: AuthComponent},
+  { path: '**', component: NotFoundComponent}
+
 
 
 

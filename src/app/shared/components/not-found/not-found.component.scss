@@ -1,0 +1,36 @@
+// .not-found{
+   .tenor-gif-embed{
+       margin-top:-200px;
+        margin-left:auto;
+        margin-right:auto;
+       
+                    }
+       
+    h2{
+        color:red;
+        text-align: center;
+        // align-items: center;
+        position: relative;
+        z-index: 1;
+        bottom: 750px;
+        margin-bottom: -750px; 
+        // анимация текста - мигание
+        animation-name: h2;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+        animation-duration: 2s;
+        -webkit-animation-name: h2;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+        -webkit-animation-duration: 2s;
+        }
+           
+          @keyframes h2 {
+            from { opacity: 1.0; }
+            to { opacity: 0.0; }
+          }
+           
+          @-webkit-keyframes h2 {
+            from { opacity: 1.0; }
+            to { opacity: 0.0; }
+          }

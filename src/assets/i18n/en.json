@@ -14,7 +14,8 @@
             "tooltip": "Enter correct URL"
         },
         "textarea":"Link description",
-        "button":"Shorten!"
+        "button":"Shorten!",
+        "counter_cut":"LinkShortener already cut - {{cuted}} links!"
 
     }
 }

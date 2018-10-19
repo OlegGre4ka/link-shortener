@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h3>{{'linkshort.title_h1'| translate}}</h3>
   <h5>{{'linkshort.text_h5'| translate}}</h5>
-  
+
   <div class="flex-spinner" *ngIf="renderedSpinner">
     <i class="fa fa-spinner fa-spin"></i>
   </div>
@@ -25,17 +25,18 @@
       <textarea class="form-control" name="description" id="" cols="20" rows="5" ngModel required placeholder="{{'linkshort.textarea'| translate}}"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-success" [disabled]="form.invalid">{{'linkshort.button'| translate}}</button>
-
+    <button type="submit" class="btn btn-success"  [disabled]="form.invalid">{{'linkshort.button'| translate}}</button>
+    <!-- (click)="counterMath()" -->
   </form>
+
 </div>
 
 <div class="container-fluid">
-
+<h3 >{{'linkshort.counter_cut'|translate:param}}</h3>
   <div class="links" *ngFor="let link of formData">
 
-    <h5> <a href="{{link.longUrl}}" target="_blank"><span (click)="counterMath()" #shortUrl>{{link.shortUrl}}</span>
-      </a> - {{link.description}} - walked {{this.count}}times</h5>
-
+    <h5> <a href="{{link.longUrl}}" target="_blank"><span #shortUrl>{{link.shortUrl}}</span>
+      </a> - {{link.description}} </h5>
+      <!-- - walked {{this.count}}times -->
   </div>
 </div>

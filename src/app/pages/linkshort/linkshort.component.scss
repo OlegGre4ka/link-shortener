@@ -1,5 +1,5 @@
 .container-fluid{
-    margin-top:70px;
+    margin-top:80px;
         h3,h5, a, form{
                  text-align:center;
                             }
@@ -10,7 +10,10 @@
                    i{
                       color:rgb(77, 77, 156)
                     }
-                }
+           }
+           ngb-carousel{
+                   z-index:-1;
+           }   
     form{
             display:flex;
             flex-direction: column;
@@ -19,7 +22,7 @@
             background-color: transparent;
           
             position: relative;
-            z-index: 1;
+            z-index: 2;
             bottom: 350px;
             margin-bottom: -350px;
             .form-group{
@@ -51,6 +54,4 @@
              }
          }
  }
- .border-error{
-        border: 1px solid red;
-}
+  

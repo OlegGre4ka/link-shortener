@@ -1,15 +1,16 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ImagesService } from 'src/app/shared/services/images.service';
+import { TranslateService } from '@ngx-translate/core';
 
-@Component({
+@Component ({
     selector: 'inst-linkshort',
     templateUrl: './linkshort.component.html',
     styleUrls: ['./linkshort.component.scss']
 })
 export class LinkshortComponent implements OnInit {
     renderedSpinner = true;
-    images: any;
+    images;
 
     short_link;
     long_link;
@@ -17,13 +18,30 @@ export class LinkshortComponent implements OnInit {
     links = {};
     formData = [];
     count = 0;
-    count1;
+    cut = 0 ;
+    localStart = +window.localStorage.getItem('cuted');
+
+    param = {};
 
     @ViewChild('form') form: NgForm;
     @ViewChild('shortUrl') shortUrl: ElementRef;
-    constructor(private imagesService: ImagesService) { }
+    constructor(private imagesService: ImagesService, private translate: TranslateService) { }
 
     ngOnInit() {
+        if (this.localStart === NaN) {
+            this.param = {cuted : this.cut};
+        } else {
+            this.param = {cuted : this.localStart};
+
+        }
+
+//         this.imagesService.getImages().subscribe(
+//             (images) => {
+// console.log(images, 'Ловимо в сабскрайбі в лінкшорті');
+
+//  this.images = [1, 2, 3 , 4 , 5].map(() => images);
+//             }
+//         );
  this.images = [1, 2, 3, 4, 5].map(() => `https://picsum.photos/1340/500?random&t=${Math.random()}`);
  this.renderedSpinner = false;
         }
@@ -54,12 +72,12 @@ export class LinkshortComponent implements OnInit {
         this.formData.push(this.links);
 
         this.form.reset();
+        this. counterMath();
     }
     counterMath() {
-        ++this.count;
-        console.log(this.shortUrl.nativeElement.textContent, 'shortUrl');
-        // localStorage.setItem(this.short_link, this.count.toString());
+        this.param = {cuted : ++this.localStart};
+      window.localStorage.setItem('cuted', this.localStart.toString());
 
-        // this.count = +localStorage.getItem(this.short_link);
+// return this.param = {cuted: this.cut };
     }
 }

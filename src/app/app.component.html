@@ -1,34 +1,43 @@
-<nav class="navbar navbar-expand-sm bg-success fixed-top navbar-dark">
+<nav class="navbar navbar-expand-md bg-success fixed-top navbar-dark">
     <div class="container">
 
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Instinctools Test</a>
+        <div class="navbar-header" routerLinkActive='active'>
+            <a class="navbar-brand"  routerLink="/linkshort">Instinctools Test</a>
         </div>
-        <ul class="navbar-nav">
-            <li class="nav-item active" routerLinkActive='active'>
-                <a class="nav-link" routerLink="/linkshort">{{'nav.linkShotener'| translate}}</a>
-            </li>
-            <li class="nav-item" routerLinkActive='active'>
-                <a class="nav-link" routerLink="/description">{{'nav.description'| translate}}</a>
-            </li>
-            <li class="nav-item" routerLinkActive='active'>
-                <a class="nav-link" routerLink="/summury">{{'nav.summury'| translate}}</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li>
-                <button class="btn btn-small btn-success" (click)="useLanguage('en')">En</button>
-            </li>
-            <li>
-                <button class="btn btn-small btn-success" (click)="useLanguage('ru')">Ru</button>
-            </li>
-            <li class="nav-item" routerLinkActive='active'>
-                <a class="nav-link" routerLink="/registration"><i class="fas fa-user"></i>
-                    {{'nav.signUp'| translate}}</a></li>
-            <li class="nav-item" routerLinkActive='active'>
-                <a class="nav-link" routerLink="/login"><i class="fas fa-sign-in-alt"></i>
-                    {{'nav.login'| translate}}</a></li>
-        </ul>
+
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" routerLinkActive='active'>
+                    <a class="nav-link" routerLink="/linkshort">{{'nav.linkShotener'| translate}}</a>
+                </li>
+                <li class="nav-item" routerLinkActive='active'>
+                    <a class="nav-link" routerLink="/description">{{'nav.description'| translate}}</a>
+                </li>
+                <li class="nav-item" routerLinkActive='active'>
+                    <a class="nav-link" routerLink="/summury">{{'nav.summury'| translate}}</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav pull-sm-right">
+                <li>
+                    <button class="btn btn-small btn-success" (click)="useLanguage('en')">En</button>
+                </li>
+                <li>
+                    <button class="btn btn-small btn-success" (click)="useLanguage('ru')">Ru</button>
+                </li>
+                <li class="nav-item" routerLinkActive='active'>
+                    <a class="nav-link" routerLink="/registration"><i class="fas fa-user"></i>
+                        {{'nav.signUp'| translate}}</a></li>
+                <li class="nav-item" routerLinkActive='active'>
+                    <a class="nav-link" routerLink="/login"><i class="fas fa-sign-in-alt"></i>
+                        {{'nav.login'| translate}}</a></li>
+
+            </ul>
+        </div>
 
     </div>
 </nav>
@@ -38,6 +47,13 @@
 
 </div>
 
-<div class="footer">
-    <p>Footer</p>
+<div class="footer fixed-bottom">
+    <div class="copy">
+        <p style="text-align:start">&copy;OlegGre4ka.2018</p>
+    </div>
+    <div class="contacts">
+        <p><i class="fas fa-at"></i>Email: gre4kae@gmail.com</p>
+        <p style="text-align:start"><i class="fab fa-skype"></i>Skype: gre4kae</p>
+
+    </div>
 </div>

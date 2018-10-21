@@ -1,40 +1,54 @@
 {
   "users": [
     {
-      "id": "1",
       "email": "gre4kae@gmail.com",
       "pass": "241976",
-      "name": "Admin-Oleg"
-    },
-    {
-      "email": "gre4kae@gmail.co",
-      "pass": "241976",
-      "name": "kkk",
-      "id": "C0jOeUa"
-    },
-    {
-      "email": "gre4kae@gmail.ee",
-      "pass": "000000",
-      "name": "ddd",
-      "id": "v8Gn_hK"
+      "name": "Admin-Oleg",
+      "id": "1"
     },
     {
       "email": "liubou.petrulevich@instinctools.ru",
       "pass": "liubov",
       "name": "Liubov",
       "id": "xNACt7D"
+    }
+  ],
+  "links": [
+    {
+      "longUrl": "https://angular.io/api/forms/FormControlName",
+      "shortUrl": "an.gu/7098",
+      "description": "AngularForms",
+      "id": 1
     },
     {
-      "email": "gre4kae@ukr.net",
-      "pass": "000000",
-      "name": "Oleg",
-      "id": "IzIz0ND"
+      "longUrl": "https://www.youtube.com/watch?v=HUZQHfaLvls&list=RD_lrVymj9xHY&index=17",
+      "shortUrl": "yo.ut/9750",
+      "description": "Dido",
+      "id": 2
     },
     {
-      "email": "gre4kae@ukr.ne",
-      "pass": "000000",
-      "name": "Liubov",
-      "id": "q4TRGzf"
+      "longUrl": "https://habr.com/company/infowatch/blog/330030/",
+      "shortUrl": "ha.br/3659",
+      "description": "Рфик",
+      "id": 3
+    },
+    {
+      "longUrl": "https://alligator.io/angular/using-renderer2/",
+      "shortUrl": "al.li/4861",
+      "description": "алигатор",
+      "id": 4
+    },
+    {
+      "longUrl": "https://www.youtube.com/watch?v=Zz-DJr1Qs54&index=20&list=RD_lrVymj9xHY",
+      "shortUrl": "yo.ut/5857",
+      "description": "вв",
+      "id": 5
+    },
+    {
+      "longUrl": "https://www.youtube.com/watch?v=SOd-rz8lDXQ&list=RDGxAcGI7ufw0&index=27",
+      "shortUrl": "yo.ut/9173",
+      "description": "ввв",
+      "id": 6
     }
   ]
 }

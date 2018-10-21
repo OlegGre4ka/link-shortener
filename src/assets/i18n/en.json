@@ -1,6 +1,8 @@
 {
     "nav": {
-        "linkShotener": "LinkShotener",
+        "linkShortener": "LinkShotener",
+    "list-hort": "Shortlinks",
+
         "description": "Description",
         "summury": "Summury",
         "signUp": "Sign Up",
@@ -11,11 +13,19 @@
         "text_h5": "Let's shorten your links)!",
         "url": {
             "placeholder": "Enter URL to shorten",
-            "tooltip": "Enter correct URL"
+            "tooltip1": "Enter correct URL",
+            "tooltip2":"This URL has already been processed, here is its short version -"
         },
-        "textarea":"Link description",
+        "textarea":{
+            "placeholder":"Link description",
+            "tooltip":"Describe your link so that others know about it."
+        },
         "button":"Shorten!",
-        "counter_cut":"LinkShortener already cut - {{cuted}} links!"
+        "counter_cut":"LinkShortener already cut - {{cuted}} links!",
+        "p":"Full list of all shortcuts -",
+        "p_a":"here"
 
-    }
+    },
+    "list_links":"List of shortened links"
+
 }

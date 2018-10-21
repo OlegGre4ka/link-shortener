@@ -1,0 +1,24 @@
+<div class="container">
+
+
+  <h1>{{'list_links'| translate}}</h1>
+
+  <!-- <div class="links" > -->
+
+  <ul>
+    <li *ngFor="let link of shorts; let i = index">
+      <span>{{i+1}}. </span>
+      <a href="{{link.longUrl}}" target="_blank">
+        <span (click)="counter(link)" #shortUrl>{{link.shortUrl}}</span>
+
+      </a> - {{link.description}}
+      <span>
+        <!-- - walked {{count}} times -->
+
+        <!-- - walked {{shortUrl.textContent}} times -->
+
+      </span>
+    </li>
+
+  </ul>
+</div>

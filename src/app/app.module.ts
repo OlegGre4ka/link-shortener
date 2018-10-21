@@ -12,6 +12,7 @@ import { SummuryComponent } from './pages/summury/summury.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { ListShortComponent } from './pages/list-short/list-short.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -22,7 +23,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     LinkshortComponent,
     DescriptionComponent,
-    SummuryComponent
+    SummuryComponent,
+    ListShortComponent
   ],
   imports: [
     BrowserModule,

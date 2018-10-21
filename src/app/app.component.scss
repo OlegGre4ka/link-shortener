@@ -1,3 +1,7 @@
+// *{
+//     margin:0;
+//     padding:0;
+// }
 nav{
     display:flex;
     justify-content: space-between;
@@ -9,33 +13,46 @@ nav{
         }
     }
 }
-.body-app{
-    margin:0;
-    padding:0;
-    height:100%;
-    // z-index:1;
-}
-.footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    // position: fixed;
-    // // z-index:-1;
-    // left: 0;
-    // bottom: 0;
-    width: 100%;
-    background-color: green;
-    color: white;
-    // .copy{
-    //    p{
-    //     text-align:start;
-    //    } 
-
-    // }
-    .contacts{
-        padding-top:5px;
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    min-height:100%;
+    .body-app{
+        // margin:0;
+        // padding:0;
+        // height:100%;
+        flex:1 0 auto;
+        // z-index:1;
     }
- }
+    .footer {
+        // flex:0 0 auto;
+        flex:none;
+
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        // следующими правилами можна футер зафиксировать или bootstrap class в шаблоне .fixed-bottom 
+        // position: fixed;
+        // // z-index:-1;
+        // left: 0;
+        // bottom: 0;
+        width: 100%;
+        background-color: green;
+        color: white;
+        // .copy{
+        //    p{
+        //     text-align:start;
+        //    } 
+    
+        // }
+        .contacts{
+            padding-top:5px;
+        }
+     }
+}
+
  @media screen and (max-width:370px) {
      .footer{
         display: flex;

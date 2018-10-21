@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UsersService } from '../../shared/services/users.service';
 import { User } from '../../shared/models/user.model';
-import { Message } from '../../shared/models/message.models';
+import { Message } from '../../shared/models/message.model';
 import { AuthService } from '../../shared/services/auth.service';
 
 @Component({

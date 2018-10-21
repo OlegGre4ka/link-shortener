@@ -12,6 +12,7 @@ export class DescriptionGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (this.authService.isLoggedAdmin()) {
+      // this.router.navigate(['/registration']);
       return true;
     } else {
       this.router.navigate(['/login'], { queryParams: { accessForAdmin: true } });

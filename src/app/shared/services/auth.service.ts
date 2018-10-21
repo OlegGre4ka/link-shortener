@@ -22,6 +22,7 @@ export class AuthService {
   isLoggedIn() {
     return this.isAuthenticated;
   }
+
   setFormData(email) {
     this.email = email;
   }

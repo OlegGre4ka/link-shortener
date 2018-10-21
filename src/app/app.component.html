@@ -13,7 +13,10 @@
         <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active" routerLinkActive='active'>
-                    <a class="nav-link" routerLink="/linkshort">{{'nav.linkShotener'| translate}}</a>
+                    <a class="nav-link" routerLink="/linkshort">{{'nav.linkShortener'| translate}}</a>
+                </li>
+                <li class="nav-item active" routerLinkActive='active'>
+                    <a class="nav-link" routerLink="/list-short">{{'nav.list-hort'| translate}}</a>
                 </li>
                 <li class="nav-item" routerLinkActive='active'>
                     <a class="nav-link" routerLink="/description">{{'nav.description'| translate}}</a>
@@ -41,19 +44,23 @@
 
     </div>
 </nav>
-
-<div class="body-app">
-    <router-outlet></router-outlet>
-
-</div>
-
-<div class="footer fixed-bottom">
-    <div class="copy">
-        <p style="text-align:start">&copy;OlegGre4ka.2018</p>
+<div class=wrapper>
+    <div class="body-app">
+        <router-outlet></router-outlet>
+    
     </div>
-    <div class="contacts">
-        <p><i class="fas fa-at"></i>Email: gre4kae@gmail.com</p>
-        <p style="text-align:start"><i class="fab fa-skype"></i>Skype: gre4kae</p>
-
+    
+    <!-- <div class="footer fixed-bottom"> -->
+    
+    <div class="footer">
+        <div class="copy">
+            <p style="text-align:start">&copy;OlegGre4ka.2018</p>
+        </div>
+        <div class="contacts">
+            <p><i class="fas fa-at"></i>Email: gre4kae@gmail.com</p>
+            <p style="text-align:start"><i class="fab fa-skype"></i>Skype: gre4kae</p>
+    
+        </div>
     </div>
+
 </div>

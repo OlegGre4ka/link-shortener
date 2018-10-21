@@ -10,11 +10,13 @@ import { AuthComponent } from './auth/auth.component';
 
 import { DescriptionGuard } from './shared/guards/description.guard';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { ListShortComponent } from './pages/list-short/list-short.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'linkshort', component: LinkshortComponent },
+  { path: 'list-short', component: ListShortComponent },
   { path: 'description', canActivate: [DescriptionGuard], component: DescriptionComponent},
   { path: 'summury', component: SummuryComponent},
 

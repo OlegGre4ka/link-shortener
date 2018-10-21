@@ -39,3 +39,6 @@ testem.log
 Thumbs.db
 #package-lock
 package-lock.json
+#firebase
+firebase.json
+.firebaserc

@@ -1,16 +1,17 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ImagesService } from 'src/app/shared/services/images.service';
 import { Link } from 'src/app/shared/models/Link.model';
 import { LinksService } from 'src/app/shared/services/links.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'inst-linkshort',
     templateUrl: './linkshort.component.html',
     styleUrls: ['./linkshort.component.scss']
 })
-export class LinkshortComponent implements OnInit {
+export class LinkshortComponent implements OnInit, OnDestroy {
     renderedSpinner = true;
     images;
 
@@ -31,6 +32,7 @@ export class LinkshortComponent implements OnInit {
     longUrl;
     shortUrl;
 
+    subscription: Subscription;
     @ViewChild('form') form: NgForm;
     // @ViewChild('shortUrl') shortUrl: ElementRef;
     constructor(private imagesService: ImagesService, private router: Router, private linkService: LinksService) { }
@@ -100,7 +102,7 @@ export class LinkshortComponent implements OnInit {
     }
     // проверка на совпадение входязей ссылки - long_link
     CompareLongLink() {
-        this.linkService.getLinks().subscribe((links) => {
+      this.subscription = this.linkService.getLinks().subscribe((links) => {
             console.log(links, ' GET -link from localhost:3000');
             links.map(link => {
                 this.compare = link.longUrl.indexOf(this.form.value.url.trim()) !== -1;
@@ -124,5 +126,10 @@ export class LinkshortComponent implements OnInit {
             });
             // });
         });
+    }
+    ngOnDestroy() {
+        if ( this.subscription) {
+          this.subscription.unsubscribe();
+        }
     }
 }

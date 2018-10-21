@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UsersService } from '../../shared/services/users.service';
 import { User } from '../../shared/models/user.model';
 import { Message } from '../../shared/models/message.model';
 import { AuthService } from '../../shared/services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'inst-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
   message: Message;
+  subscription: Subscription;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -52,7 +54,7 @@ export class LoginComponent implements OnInit {
     console.log(formData.email, 'this.loginForm.value');
     this.authServise.setFormData(formData.email) ;
 
-    this.usersService.getUserByEmail(formData.email).subscribe((user: User) => {
+   this.subscription = this.usersService.getUserByEmail(formData.email).subscribe((user: User) => {
       console.log(user, ' GET -user from localhost:3000');
       if (user) {
         if (user.pass === formData.pass) {
@@ -69,5 +71,11 @@ export class LoginComponent implements OnInit {
       }
     });
     this.loginForm.reset();
+  }
+
+  ngOnDestroy() {
+    if ( this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

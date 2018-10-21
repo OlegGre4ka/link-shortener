@@ -16,15 +16,7 @@ export class LinksService {
 
   getLinks(): Observable<any> {
     return this.http.get(`http://localhost:3000/links`);
-  //   .pipe(
-  // map((link: Link[]) => link[0] ? link[0] : undefined)
-  // );
+
   }
-  // getByLongLink(): Observable<any> {
-  //   return this.http.get(`http://localhost:3000/links`);
-  // //   .pipe(
-  // // // tslint:disable-next-line:no-shadowed-variable
-  // // map(( link.longUrl) => link[0][0] ? link[0][0] : undefined)
-  // // );
-  // }
+
 }

@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         } else if (params['accessForAdmin']) {
           this.showMessage({ text: 'Эта страница доступна только администраторам!Введите пароль администротора!', type: 'warning' });
         }
+        // else (params['accessOpen']){}
       }
     );
   }

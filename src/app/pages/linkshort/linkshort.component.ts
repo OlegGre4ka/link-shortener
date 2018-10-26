@@ -21,7 +21,7 @@ export class LinkshortComponent implements OnInit, OnDestroy {
     longLink;
     links = {};
     formData = [];
-    // count = 0;
+    count = 0;
     cut = 0;
     localStart = +window.localStorage.getItem('cuted');
 
@@ -76,6 +76,7 @@ export class LinkshortComponent implements OnInit, OnDestroy {
             longUrl: this.long_link,
             shortUrl: this.short_link,
             description: this.description,
+            count: this.count
         };
         this.formData.push(this.links);
 
@@ -92,7 +93,7 @@ export class LinkshortComponent implements OnInit, OnDestroy {
     // создание нового обЪекта Link на сервере
     linkToServer() {
         console.log(this.description, 'description Link');
-        const link = new Link(this.long_link, this.short_link, this.description);
+        const link = new Link(this.long_link, this.short_link, this.description, this.count);
         this.linkService.createNewLink(link).subscribe(
             // tslint:disable-next-line:no-shadowed-variable
             (link: Link) => {

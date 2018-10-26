@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, pipe } from 'rxjs';
+import { Observable, pipe, Subject } from 'rxjs';
 import { Link } from '../models/Link.model';
 import { map } from 'rxjs/operators';
 
@@ -19,4 +19,10 @@ export class LinksService {
 
   }
 
+
+  updateLinkCount(id: number, count: any): Observable<any> {
+    return this.http.patch(`http://localhost:3000/links/${id}`, { count });
+  }
 }
+
+

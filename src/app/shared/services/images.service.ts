@@ -10,13 +10,13 @@ import { Injectable } from '@angular/core';
 export class ImagesService {
    images$: any ;
   constructor(private http: HttpClient) { }
-  getImages(): Observable<any> {
-    return this.http.get( `https://picsum.photos/1340/500?random&t=${Math.random()}`);
+  // getImages(): Observable<any> {
+  //   return this.http.get( `https://picsum.photos/1340/500?random&t=${Math.random()}`);
     // return this.http.get( `https://picsum.photos/1340/500?random`)
 
 //     .pipe(
 // // this.images = images
 // take(5)
 //     );
-}
+// }
 }

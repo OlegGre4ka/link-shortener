@@ -3,6 +3,7 @@ export class Link {
   public longUrl: string,
   public shortUrl: string,
   public description: string,
-  public id?: string
+  public count: number,
+  public id?: string|number
  ) {}
 }

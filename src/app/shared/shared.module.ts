@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { CounterDirective } from './directives/counter.directive';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -29,7 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
   })
   ],
-  declarations: [NotFoundComponent],
+  declarations: [NotFoundComponent, CounterDirective],
 
   exports: [
     HttpClientModule,
@@ -37,7 +38,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     NgbModule,
     TranslateModule,
-    NotFoundComponent
+    NotFoundComponent,
+    CounterDirective,
   ]
 })
 export class SharedModule { }
